@@ -1,0 +1,31 @@
+<div class="search-filters">
+  <div class="btn-group">
+    <%= link_to join_game_path(time: :time) do %>
+      <input class="btn-prim" type="button" value="today">
+    <% end %>
+  </div>
+
+  <div class="btn-group">
+    <div class="dropdown">
+      <button class="btn-prim dropdown-toggle" type="button" data-toggle="dropdown">skill-level
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><%= link_to "ITN 1-3", join_game_path(skill_level: :'1') %></li>
+        <li><%= link_to "ITN 3-3", join_game_path(skill_level: :'3') %></li>
+        <li><%= link_to "ITN 6-9", join_game_path(skill_level: :'6') %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <div class="dropdown">
+    <button class="btn-prim dropdown-toggle" type="button" data-toggle="dropdown">game-type<span class="caret"></span>
+    </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Singles", join_game_path(game_type: :singles) %></li>
+        <li><%= link_to "Doubles", join_game_path(game_type: :doubles) %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+

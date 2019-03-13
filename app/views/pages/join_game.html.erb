@@ -1,15 +1,39 @@
+
+
 <div id="header-link">
   <h2>Find a game that suits you.</h2>
-  <%= link_to "find a partner", games_path, method: :post, class: "btn-prim" %>
+  <%= link_to "find a partner", new_game_path, class: "btn-prim" %>
 </div>
 
+  <!-- Search bar for testing purposes -->
+<div class="container">
+  <div class="row">
+    <div class="search-container col-md-12">
 
+      <div class="searchbar">
 
+        <div class="input-group form">
+          <%= form_tag(join_game_path, method: 'get') do %>
+          <span class="top_search_icon"><%= image_tag("Group") %></span>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "search for e.g. name"%>
+          <% end %>
+        </div>
+      </div>
+
+      <!--SEARCH FILTERS-->
+      <%= render 'search_filters' %>
+
+   </div>
+  </div>
+</div>
 
 <% @games.each do |game| %>
 <% @max_number_of_players = 2 if game.game_type == "Singles" %>
 <% @max_number_of_players = 4 if game.game_type == "Doubles" %>
-  <div class="card-list">
+  <div class="card-list" id="games-list" data-games = <%= @game %>>
     <div class="card-avatar">
       <div class="avatar-batch">
         <img class="avatar-large" alt="avatar" src="<%= game.host.photo %>" />
@@ -32,3 +56,4 @@
     </div>
   </div>
 <% end %>
+

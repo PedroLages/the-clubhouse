@@ -6,8 +6,6 @@
   display: flex;
   justify-content: space-around;
   padding-top: 40px;
-  padding-bottom: 40px;
-  margin: auto;
 }
 
 .footer img {
@@ -24,16 +22,13 @@
   margin: 0px;
 }
 
-.footer-item {
-  margin-left: 100px;
-}
-
 .footer-copyright {
   font-weight: 400;
   line-height: 21px;
   font-size: 12px;
   letter-spacing: 0.05em;
   padding-left: 40px;
+  margin-bottom: 40px;
 }
 
 .footer-links {
@@ -58,7 +53,6 @@
 
 .list-footer ul {
   list-style-type: none;
-  padding: 0px;
 }
 
 .list-footer a{

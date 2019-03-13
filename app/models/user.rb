@@ -16,10 +16,10 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   pg_search_scope :search_by_first_name_and_last_name,
-  against: [:first_name, :last_name],
-  using: {
-    tsearch: { prefix: true }
-  }
+                  against: [:first_name, :last_name],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 
   private
 

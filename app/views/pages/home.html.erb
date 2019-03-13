@@ -33,7 +33,7 @@
     <h1>Yo <%= current_user.first_name %>,</h1>
     <h2>Can't sleep? <br> Better go play tennis tomorrow.</h2>
   <% end %>
-  <%= link_to "find a partner", games_path, method: :post, class: "btn-prim" %>
+  <%= link_to "find a partner", new_game_path, class: "btn-prim" %>
 </div>
 
 <!--TABS GAMES-->

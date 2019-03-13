@@ -1,25 +1,52 @@
 <div id="header-link">
   <h2>Games happening at your club.</h2>
-  <%= link_to "find a partner", games_path, method: :post, class: "btn-prim" %>
+  <%= link_to "find a partner", new_game_path, class: "btn-prim" %>
 </div>
 
-<% @games.each do |game| %>
-<% @max_number_of_players = 2 if game.game_type == "Singles" %>
-<% @max_number_of_players = 4 if game.game_type == "Doubles" %>
-  <div class="card-list">
-    <div class="card-avatar">
-      <div class="avatar-batch">
-        <img class="avatar-large" alt="avatar" src="<%= game.host.photo %>" />
-        <div class="skill-level-badge-position skill-level-badge">
-            <p><%= game.skill_level %></p>
-          <h5>itn</h5>
-        </div>
-        <div class="card-specifications">
-          <h3><%= game.game_type %></h3>
-          <h4><%= game.date.month %>.<%= game.date.day %>.<%= game.date.year %> at <%= game.time.hour %>h<%= game.time.min %></h4>
-          <h5>with <%= game.host.first_name %> <%= game.host.last_name %> </h5>
+<div class="container">
+  <div class="row">
+    <div class="search-container col-md-12">
+
+      <div class="searchbar">
+
+        <div class="input-group form">
+          <%= form_tag(games_path, method: 'get') do %>
+          <span class="top_search_icon"><%= image_tag("Group") %></span>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "search for e.g. name"%>
+          <% end %>
         </div>
       </div>
-    </div>
+
+      <!--SEARCH FILTERS-->
+      <%= render 'search_filters' %>
+
+   </div>
   </div>
-<% end %>
+</div>
+
+    <div id="players-search">
+    <% @games.each do |game| %>
+      <% @max_number_of_players = 2 if game.game_type == "Singles" %>
+      <% @max_number_of_players = 4 if game.game_type == "Doubles" %>
+        <div class="card-list">
+          <div class="card-avatar">
+            <div class="avatar-batch">
+              <img class="avatar-large" alt="avatar" src="<%= game.host.photo %>" />
+              <div class="skill-level-badge-position skill-level-badge">
+                  <p><%= game.skill_level %></p>
+                <h5>itn</h5>
+              </div>
+              <div class="card-specifications">
+                <h3><%= game.game_type %></h3>
+                <h4><%= game.date.month %>.<%= game.date.day %>.<%= game.date.year %> at <%= game.time.hour %>h<%= game.time.min %></h4>
+                <h5>with <%= game.host.first_name %> <%= game.host.last_name %> </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+

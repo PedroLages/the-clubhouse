@@ -1,5 +1,5 @@
 .background-image {
-  background-image: linear-gradient(rgba(34,56,67,0.2), rgba(34,56,67,0.1)),
+  background-image: linear-gradient(rgba(34,56,67,0.5), rgba(34,56,67,0.4)),
          asset-url("landing_bg_img.jpeg");
   height: 100vh;
   width: 100vw;
@@ -17,30 +17,25 @@
   flex-direction: column;
 }
 
-.flex-land h1 {
-  font-size: 48px;
-  font-weight: 600;
-  padding-bottom: 40px;
-}
-
-.flex-land p {
-  font-weight: 500;
-  line-height: 28px;
-  font-size: 16px;
-  text-align: center;
-  letter-spacing: 0.8px;
-  text-decoration: none;
-}
-
 .logo {
   margin: auto;
-  margin-bottom: 40px;
 }
 
 .buttons-landing {
   margin: auto;
-  margin-top: 60px;
+  margin-top: 20px;
 }
+
+// .landing-logo {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   text-align: center;
+// }
+// .flex-item {
+//   //display: flex;
+// }
 
 .btn-prim-land {
   color: white;
@@ -56,7 +51,6 @@
   text-decoration: none;
   margin-top: 40px;
   width: 400px;
-  margin: 20px;
   &:hover {
     color: $color-red;
     background-color: transparent;

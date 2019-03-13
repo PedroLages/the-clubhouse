@@ -4,13 +4,14 @@ class UsersController < ApplicationController
   def index
     if params[:query].present?
       @users = User.search_by_first_name_and_last_name(params[:query])
-      respond_to do |format|
-        format.js { render partial: 'search-results'}
-      end
-
+      # respond_to do |format|
+      #   format.html
+      #   format.js { render partial: 'search-results' }
+      # end
     else
       @users = User.all
     end
+
     @game = Game.all
   end
 
