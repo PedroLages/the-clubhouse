@@ -9,6 +9,7 @@ gem 'pg_search'
 gem 'puma'
 gem 'rails', '5.2.2'
 gem 'redis'
+gem 'jquery-rails'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
@@ -17,7 +18,7 @@ gem 'wicked'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'font-awesome-sass', '~> 5.5.0'
+gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'

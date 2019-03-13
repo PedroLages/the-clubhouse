@@ -1,5 +1,6 @@
 //= require rails-ujs
 //= require_tree .
+//= require jquery3
 
 function openGame(evt, gameName) {
   // Declare all variables

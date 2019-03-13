@@ -293,8 +293,8 @@ th, td {
 
 .host-buttons {
   position: absolute;
-  top: 40px;
-  right: 42px;
+  top: 20px;
+  right: 15px;
   a {
     text-decoration: none;
   }
@@ -306,6 +306,7 @@ th, td {
 
 .host-buttons a {
   color: $color-blue50;
+  padding-right: 5px;
       &:hover {
       color: $color-red;
       cursor: pointer;

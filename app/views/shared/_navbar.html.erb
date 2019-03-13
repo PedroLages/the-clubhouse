@@ -50,7 +50,8 @@
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "nav-clubhaus-item nav-clubhaus-link" %>
   </div>
     <!-- Dropdown list appearing on mobile only -->
-  <div class="nav-clubhaus-item hidden-xs hidden-sm hidden-md hidden-lg">
+  <% end %>
+  <div class="nav-clubhaus-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-left nav-clubhaus-dropdown-menu">
@@ -60,7 +61,6 @@
       </ul>
     </div>
   </div>
-  <% end %>
 
 </div>
 

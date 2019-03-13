@@ -1,11 +1,14 @@
   <!-- Search bar for testing purposes -->
 <div class="container">
   <div class="row">
-    <h1 class="text-center" id="banner-title">Search a user</h1>
-    <div class="banner-content home-banner-positioning col-md-12">
+    <h1 class="text-center">Find a game that suits you.</h1>
+    <div class="search-container col-md-12">
+
       <div class="searchbar">
-        <div class="input-group form-control">
-          <%= form_tag users_path, method: :get do %>
+
+        <div class="input-group form">
+          <%= form_tag(users_path, method: 'get', remote: true) do %>
+          <span class="top_search_icon"><i class="fa fa-search"></i></span>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
@@ -13,39 +16,47 @@
           <% end %>
         </div>
     </div>
+
+     <div class="search-filters">
+       <div class="btn-group">
+         <div class="dropdown">
+          <button class="btn-prim dropdown-toggle" type="button" data-toggle="dropdown">today
+          <span class="caret"></span></button>
+          <!-- <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+          </ul> -->
+        </div>
+       </div>
+
+       <div class="btn-group">
+        <div class="dropdown">
+          <button class="btn-prim dropdown-toggle" type="button" data-toggle="dropdown">skill-level
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <div class="dropdown">
+          <button class="btn-prim dropdown-toggle" type="button" data-toggle="dropdown">game-type
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Singles</a></li>
+            <li><a href="#">Doubles</a></li>
+          </ul>
+        </div>
+      </div>
+     </div>
+
   </div>
 </div>
-
 <div class="container">
   <div class="row">
-    <h1>Users#index</h1>
-      <% @users.each do |user| %>
-        <h2><%= user.first_name %> <%= user.last_name %></h2>
-
-        <div class="card-list">
-            <div class="card-avatar">
-              <div class="avatar-batch">
-                <img class="avatar-large" alt="avatar" src="https://www.fm1today.ch/2019/03/20190302172247798-640x640.jpg" />
-                <div class="skill-level-badge-position skill-level-badge">
-                  <p>5-6</p>
-                  <h5>itn</h5>
-                </div>
-                <div class="card-specifications">
-                  <h3>Single</h3>
-                  <h4>19.5.2018 at 17h00</h4>
-                  <h5><%= user.first_name %> <%= user.last_name %></h5>
-                </div>
-              </div>
-            </div>
-            <div class="card-spots">
-              <h4>1 / 2</h4>
-            </div>
-            <div>
-              <a href="#" class="btn-prim-s">join</a>
-            </div>
-        </div>
-
-      <% end %>
-
+    <div id="search-results"></div>
  </div>
 </div>

@@ -1,0 +1,5 @@
+meta_product_name: "Clubhaus"
+meta_title: "clubhaus - for social tennis clubs"
+meta_description: "The clubhaus is the online meeting point for members of private tennis clubs to find tennis partners, to know what's going on at the club and a management tool for the club."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards

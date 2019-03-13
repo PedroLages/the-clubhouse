@@ -21,6 +21,25 @@
             <p><%= game.date.day %>.<%= game.date.month %>.<%= game.date.year %></p>
             <p><%= game.time.hour %>h<%= game.time.min %></p>
           </div>
+          <div class="host-buttons">
+            <% if game.additional_info == "" %>
+            <% else %>
+              <a class="far fa-envelope-open" dropdown-toggle" data-toggle="dropdown"></a>
+              <div class="dropdown-menu dropdown-menu-card dropdown-menu-right">
+                <h5>Additional info:</h5>
+                <p><%= game.additional_info %></p>
+              </div>
+            <% end %>
+            <% if  game.host == current_user%>
+              <%= link_to edit_game_path(game) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            <%= link_to game_path(game), method: :delete, data: {confirm: "Are you sure you want to delete this game?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+
           <div class="court-player-left">
             <table>
               <tr>
@@ -103,16 +122,6 @@
               <% end %>
             </table>
           </div>
-          <% if  game.host == current_user%>
-            <div class="host-buttons">
-              <%= link_to edit_game_path(game) do %>
-                <i class="far fa-edit"></i>
-              <% end %>
-              <%= link_to game_path(game), method: :delete, data: {confirm: "Are you sure you want to delete this game?" } do %>
-                <i class="fas fa-ban"></i>
-              <% end %>
-            </div>
-          <% end %>
         </div>
       <% end %>
     <% end %>
@@ -137,7 +146,7 @@
              <div class="host-buttons">
               <% if game.additional_info == "" %>
               <% else %>
-                <a class="far fa-comment-alt dropdown-toggle" data-toggle="dropdown"></a>
+                <a class="far fa-envelope-open" dropdown-toggle" data-toggle="dropdown"></a>
                 <div class="dropdown-menu dropdown-menu-card dropdown-menu-right">
                   <p>
                     <h5>Additional info:</h5>
